@@ -22,8 +22,7 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -52,8 +51,7 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -77,8 +75,7 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -143,8 +140,7 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -178,8 +174,7 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [],
@@ -192,8 +187,7 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -240,8 +234,7 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
   },
   {
     "inputs": [
@@ -270,11 +263,29 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function",
-    "constant": true
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "money",
+        "type": "uint256"
+      }
+    ],
+    "name": "checkout",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
 ]
-const restaurantsContractAddress = '0xd75d813951adC13088e1fc748B7c3a9514668aCe';
+const restaurantsContractAddress = '0x62C36469296FF2Db2E045f66e5Be2C15EAc0956C';
 
 // Connect to the Ethereum network using Web3.js
 const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
@@ -542,9 +553,20 @@ function processCheckout() {
   // For example, you could send a transaction to a blockchain
   // or update inventory in a database
   // After completing the checkout, you might want to clear the cart and update UI
+  let totalAmount = 0;
+  for(let i = 0; i < cart.length; i ++){
+    const item = cart[i];
+    totalAmount += item.price;
+  }
+  let amountTransacted = restaurantsContract.methods.checkout(totalAmount).call();
+  console.log(amountTransacted);
   cart.splice(0, cart.length); // Clear the cart
+  count = 0;
+  cartContainer.innerHTML = '';
   updateCartUI(); // Update the cart UI
-  alert('Checkout complete. Thank you for your purchase!');
+  alert('Wohooo!! Order Placed');
+  alert('We recived your transaction amount of ' + totalAmount);
+  alert('Remaining balance -> ' + amountTransacted[0]);
 }
 
 

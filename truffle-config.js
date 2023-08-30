@@ -2,7 +2,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
   networks: {
-    sepolia: {
+    ganache: {
       provider: () => new HDWalletProvider({
         mnemonic: {
           phrase: 'peanut rebuild shy luggage spray proof pond lucky suspect voyage bag wave' // Replace with your actual mnemonic
@@ -21,4 +21,18 @@ module.exports = {
   },
   compilers: {
     solc: {
-      version: "0.8.0" 
+      version: "0.8.0" // Use the required version of the Solidity compiler
+    }
+  },
+  db: {
+    // Truffle DB settings
+    enabled: false,
+    host: "127.0.0.1",
+    adapter: {
+      name: "indexeddb",
+      settings: {
+        directory: ".db"
+      }
+    }
+  }
+};
