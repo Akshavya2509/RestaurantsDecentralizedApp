@@ -1,0 +1,170 @@
+/* Your CSS styles for the front-end design can go here.
+   Make sure to include styles for light and dark modes. */
+
+/* Light Mode */
+body {
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.restaurant-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.outlet-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.outlet-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.food-item-list {
+    list-style: none;
+    padding: 0;
+}
+
+.food-item-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.buy-button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #f7f7f7;
+}
+
+/* Add additional CSS for dark mode as per your design */
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #f7f7f7;
+}
+
+.container {
+    border: 1px solid #f7f7f7;
+    background-color: #444;
+}
+
+.header {
+    color: #f7f7f7;
+}
+
+.restaurant-card {
+    background-color: #555;
+    color: #f7f7f7;
+    border: 1px solid #444;
+}
+
+.restaurant-card:hover {
+    background-color: #666;
+}
+
+.outlet-card {
+    background-color: #555;
+    color: #f7f7f7;
+    border: 1px solid #444;
+}
+
+.outlet-card:hover {
+    background-color: #666;
+}
+
+.food-item-list li {
+    color: #f7f7f7;
+}
+
+.add-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+.cart-container {
+    background-color: #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.buy-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-button:hover {
+    background-color: #0056b3;
+}
