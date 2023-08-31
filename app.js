@@ -548,7 +548,7 @@ async function showCartPage(resId, outlet, outletId) {
 }
 
 // Function to process the checkout
-function processCheckout() {
+async function processCheckout() {
   // Perform any necessary actions to complete the checkout
   // For example, you could send a transaction to a blockchain
   // or update inventory in a database
@@ -558,7 +558,7 @@ function processCheckout() {
     const item = cart[i];
     totalAmount += item.price;
   }
-  let amountTransacted = restaurantsContract.methods.checkout(totalAmount).call();
+  let amountTransacted = await restaurantsContract.methods.checkout(totalAmount).call();
   console.log(amountTransacted);
   cart.splice(0, cart.length); // Clear the cart
   count = 0;
@@ -566,7 +566,7 @@ function processCheckout() {
   updateCartUI(); // Update the cart UI
   alert('Wohooo!! Order Placed');
   alert('We recived your transaction amount of ' + totalAmount);
-  alert('Remaining balance -> ' + amountTransacted[0]);
+  alert('Remaining balance -> ' + amountTransacted);
 }
 
 
