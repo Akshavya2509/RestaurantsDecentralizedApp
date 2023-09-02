@@ -486,8 +486,8 @@ function updateCartUI(count) {
         console.log(itemPrice + " " + item);
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
-            <h6 class="food-item-name" style="color: white">${i+1}. Food Item ${i+1}: ${item.name}</h6>
-            <h6 class="food-item-name" style="color: white">Price: Rs. ${item.price}/ ${itemPrice} ETH</h6>
+            <h4 class="food-item-name" style="color: white">${i+1}. Food Item ${i+1}: ${item.name}</h4>
+            <h4 class="food-item-name" style="color: white">Price: Rs. ${item.price}/ ${itemPrice} ETH</h4>
         `;
         cartItems.appendChild(cartItem);
     }
@@ -546,18 +546,19 @@ async function showCartPage(resId, outlet, outletId) {
   document.body.innerHTML = '';
   document.body.appendChild(mainContent);
 }
-
+let totalAmount = 0;
 // Function to process the checkout
 async function processCheckout() {
   // Perform any necessary actions to complete the checkout
   // For example, you could send a transaction to a blockchain
   // or update inventory in a database
   // After completing the checkout, you might want to clear the cart and update UI
-  let totalAmount = 0;
+  let curr_transaction_amount = 0;
   for(let i = 0; i < cart.length; i ++){
     const item = cart[i];
-    totalAmount += item.price;
+    curr_transaction_amount += item.price;
   }
+  totalAmount += curr_transaction_amount;
   let amountTransacted = await restaurantsContract.methods.checkout(totalAmount).call();
   console.log(amountTransacted);
   cart.splice(0, cart.length); // Clear the cart
@@ -565,7 +566,7 @@ async function processCheckout() {
   cartContainer.innerHTML = '';
   updateCartUI(); // Update the cart UI
   alert('Wohooo!! Order Placed');
-  alert('We recived your transaction amount of ' + totalAmount);
+  alert('We recived your transaction amount of ' + curr_transaction_amount);
   alert('Remaining balance -> ' + amountTransacted);
 }
 
