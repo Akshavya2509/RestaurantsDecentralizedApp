@@ -327,8 +327,8 @@ function createRestaurantCard(restaurant, restaurantId) {
   const card = document.createElement('div');
   card.className = 'restaurant-card';
   card.innerHTML = `
-    <h2 class="restaurant-name">${restaurant.name}</h2>
-    <p class="restaurant-location">${restaurant.location}</p>
+    <h2 class="restaurant-name" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">${restaurant.name}</h2>
+    <p class="restaurant-location" style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">${restaurant.location}</p>
   `;
   card.addEventListener('click', () => {
     showOutletPage(restaurantId);
@@ -382,9 +382,9 @@ function createOutletCard(resId, outlet, outletId) {
   const card = document.createElement('div');
   card.className = 'outlet-card';
   card.innerHTML = `
-    <h2 class="outlet-name">${outlet[0]}</h2>
-    <p class="outlet-location">${outlet[1]}</p>
-    <p class="outlet-rating">Rating: ${outlet[2]} stars</p>
+    <h2 class="outlet-name"style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">${outlet[0]}</h2>
+    <p class="outlet-location"style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">${outlet[1]}</p>
+    <p class="outlet-rating"style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Rating: ${outlet[2]} stars</p>
   `;
   card.addEventListener('click', () => {
     showFoodItemsPage(resId, outlet, outletId);
@@ -421,8 +421,8 @@ async function showFoodItemsPage(resId, outlet, outletId) {
         const listItem = document.createElement('div');
         listItem.className = 'food-item';
         listItem.innerHTML = `
-            <h4 class="food-item-name" style="color: white">${i+1}. Food Item ${i+1}: ${item}</h4>
-            <h4 class="food-item-price" style="color:white">   Price: Rs. ${foodItem[1]} /${itemPriceETH} ETH</h4>
+            <h4 class="food-item-name" style="color: white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">${i+1}. Food Item ${i+1}: ${item}</h4>
+            <h4 class="food-item-price" style="color: white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">   Price: Rs. ${foodItem[1]} /${itemPriceETH} ETH</h4>
             <button class="add-button" onclick="addToCart('${item}', ${foodItem[1]})">Add to Cart</button>
         `;
         foodItemsList.appendChild(listItem);
@@ -486,8 +486,8 @@ function updateCartUI(count) {
         console.log(itemPrice + " " + item);
         cartItem.className = 'cart-item';
         cartItem.innerHTML = `
-            <h4 class="food-item-name" style="color: white">${i+1}. Food Item ${i+1}: ${item.name}</h4>
-            <h4 class="food-item-name" style="color: white">Price: Rs. ${item.price}/ ${itemPrice} ETH</h4>
+            <h4 class="food-item-name" style="color: white; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">${i+1}. Food Item ${i+1}: ${item.name}</h4>
+            <h4 class="food-item-name" style="color: white;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Price: Rs. ${item.price}/ ${itemPrice} ETH</h4>
         `;
         cartItems.appendChild(cartItem);
     }
