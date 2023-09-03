@@ -1,4 +1,4 @@
-INTRODUCTION
+# RestaurantsDecentralizedApp
 
 The Restaurants DAPP represents a fusion of the traditional restaurant industry with the cutting-edge world of decentralized applications and blockchain. At its core, this application seeks to revolutionize the way people discover, interact with, and engage in the world of dining and gastronomy.
 
@@ -32,20 +32,16 @@ IMPLEMEMTATION
 RestaurantsDAPP code files:
 ![Screenshot (66)](https://github.com/Akshavya2509/RestaurantsDecentralizedApp/assets/97899039/7ce32ee3-7a56-48df-8fac-8809ad74f534)
 
-BIBLIOGRAPHY
-Nakamoto, S. (2008). "Bitcoin: A Peer-to-Peer Electronic Cash System." Retrieved from https://bitcoin.org/bitcoin.pdf
+BIBLIOGRAPHY:
 
-Solidity Documentation. (n.d.). Retrieved from https://soliditylang.org/docs/
+1. Nakamoto, S. (2008). "Bitcoin: A Peer-to-Peer Electronic Cash System." Retrieved from https://bitcoin.org/bitcoin.pdf
 
-OpenZeppelin. (n.d.). "OpenZeppelin Contracts." Retrieved from https://openzeppelin.com/contracts/
+2. Solidity Documentation. (n.d.). Retrieved from https://soliditylang.org/docs/
 
-Truffle Suite. (n.d.). "Truffle Suite - Your Ethereum Swiss Army Knife." Retrieved from https://www.trufflesuite.com/
+3. OpenZeppelin. (n.d.). "OpenZeppelin Contracts." Retrieved from https://openzeppelin.com/contracts/
 
-Web3.js Documentation. (n.d.). Retrieved from https://web3js.readthedocs.io/en/v1.5.2/
+4. Truffle Suite. (n.d.). "Truffle Suite - Your Ethereum Swiss Army Knife." Retrieved from https://www.trufflesuite.com/
 
+5. Web3.js Documentation. (n.d.). Retrieved from https://web3js.readthedocs.io/en/v1.5.2/
 
-Pressman, R. S. (2014). "Software Engineering: A Practitioner's Approach." McGraw-Hill Education.
-
-
-
-# RestaurantsDecentralizedApp
+6. Pressman, R. S. (2014). "Software Engineering: A Practitioner's Approach." McGraw-Hill Education.
