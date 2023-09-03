@@ -14,8 +14,8 @@ module.exports = {
         {
           privateKey: '0x2bfd04d63ffecf8ec0b18935f3e8cf37844b47d3b5643fc4daf1506ed623e5f4', // Private key of Ganache account 0
           balance: '1000000000000000000000', // Initial balance in wei
-          gas: 10000000,           // Adjust gas limit according to your contract's complexity
-          gasPrice: 10000000000   // Adjust gas price as needed
+          gas: 1000000000,           // Adjust gas limit according to your contract's complexity
+          gasPrice: 10000000   // Adjust gas price as needed
         }]
     }
   },

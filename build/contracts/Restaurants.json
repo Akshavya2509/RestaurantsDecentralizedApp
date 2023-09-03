@@ -10438,12 +10438,12 @@
     "11155111": {
       "events": {},
       "links": {},
-      "address": "0x62C36469296FF2Db2E045f66e5Be2C15EAc0956C",
-      "transactionHash": "0x38c316b4408f1f008243c49a6cb829e0d3023c45aff6dcd7984be0ba4b9ec21d"
+      "address": "0x54E46Ac58330fA75C3F9243f00126219Ca4c8139",
+      "transactionHash": "0x4c39a1f93f39753c45354cc00f95132d984b5b21a57630556eb66b0bf0e7d8aa"
     }
   },
   "schemaVersion": "3.4.15",
-  "updatedAt": "2023-08-30T19:23:07.404Z",
+  "updatedAt": "2023-09-03T17:24:34.172Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

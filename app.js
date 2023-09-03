@@ -22,7 +22,8 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -51,7 +52,8 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -75,7 +77,8 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -140,7 +143,8 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -174,7 +178,8 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [],
@@ -187,7 +192,8 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -234,7 +240,8 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -263,7 +270,8 @@ const restaurantsContractABI = [
       }
     ],
     "stateMutability": "view",
-    "type": "function"
+    "type": "function",
+    "constant": true
   },
   {
     "inputs": [
@@ -285,7 +293,7 @@ const restaurantsContractABI = [
     "type": "function"
   }
 ]
-const restaurantsContractAddress = '0x62C36469296FF2Db2E045f66e5Be2C15EAc0956C';
+const restaurantsContractAddress = '0x54E46Ac58330fA75C3F9243f00126219Ca4c8139';
 
 // Connect to the Ethereum network using Web3.js
 const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
@@ -562,15 +570,28 @@ async function processCheckout() {
     curr_transaction_amount += item.price;
   }
   totalAmount += curr_transaction_amount;
+  // totalAmount *= 0.0000073;
   let amountTransacted = await restaurantsContract.methods.checkout(totalAmount).call();
   console.log(amountTransacted);
   cart.splice(0, cart.length); // Clear the cart
   count = 0;
   cartContainer.innerHTML = '';
   updateCartUI(); // Update the cart UI
-  alert('Wohooo!! Order Placed');
-  alert('We recived your transaction amount of ' + curr_transaction_amount);
-  alert('Remaining balance -> ' + amountTransacted);
+  const yay = document.createElement('div');
+  yay.className = 'check-out';
+        yay.innerHTML = `
+            <h4 style="color: black; font-family: Snyder">Wohooo!!! Order successfully Placed 🎉🎉</h4>
+            <h4 style="color: black;font-family: Snyder"> We have recieved your order amount of ${curr_transaction_amount}</h4>
+            <h4 style="color: black;font-family: Snyder"> Remaining balance in your account is ${amountTransacted}</h4>
+        `;
+
+        const backButton = createBackButton(showHomePage);
+
+    const checkoutPage = document.createElement('div');
+    checkoutPage.appendChild(backButton);
+    checkoutPage.appendChild(yay);
+    document.body.innerHTML = ``;
+    document.body.appendChild(checkoutPage);
 }
 
 
