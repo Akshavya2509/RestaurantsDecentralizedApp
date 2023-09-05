@@ -71,7 +71,14 @@ body {
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+.check-out {
+    position: relative;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    background-color: #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 .cart {
     max-height: 300px;
     overflow-y: auto;

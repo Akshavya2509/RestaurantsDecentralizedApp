@@ -580,9 +580,9 @@ async function processCheckout() {
   const yay = document.createElement('div');
   yay.className = 'check-out';
         yay.innerHTML = `
-            <h4 style="color: black; font-family: Snyder">Wohooo!!! Order successfully Placed 🎉🎉</h4>
-            <h4 style="color: black;font-family: Snyder"> We have recieved your order amount of ${curr_transaction_amount}</h4>
-            <h4 style="color: black;font-family: Snyder"> Remaining balance in your account is ${amountTransacted}</h4>
+            <h4 style="color: white; font-family: Snyder">Wohooo!!! Order successfully Placed 🎉🎉</h4>
+            <h4 style="color: white;font-family: Snyder"> We have recieved your order amount of ${curr_transaction_amount}</h4>
+            <h4 style="color: white;font-family: Snyder"> Remaining balance in your account is ${amountTransacted}</h4>
         `;
 
         const backButton = createBackButton(showHomePage);
