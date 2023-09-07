@@ -594,27 +594,6 @@ async function processCheckout() {
     document.body.appendChild(checkoutPage);
 }
 
-
-// Function to show the payments page
-function showPaymentsPage() {
-    window.location.href = "payments.html";
-}
-
-// Function to pay with wallet
-function payWithWallet() {
-    // Implement logic to connect to the user's wallet and initiate the payment process
-    // For example, using MetaMask or other Ethereum wallet providers
-    alert('Payment with Wallet initiated.');
-    clearCart();
-}
-
-// Function to pay on delivery
-function payOnDelivery() {
-    // Implement logic for pay on delivery option
-    alert('Payment on Delivery selected.');
-    clearCart();
-}
-
 // Function to clear the cart
 function clearCart() {
     cart.length = 0;
